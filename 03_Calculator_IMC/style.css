@@ -6,13 +6,26 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Layout general */
 body {
   background: linear-gradient(135deg, #ffecd2 0%, #3889f2 100%);
   min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;   /* nav sus (dacă vrei), conținut dedesubt */
+  /* NU mai folosi padding mare aici care împinge cardul în lateral */
+  padding: 0;               /* sau doar un mic padding lateral pe mobile: 0 16px */
 }
+
+/* Zona care CENTREAZĂ pe mijloc ecranul */
+.main {
+  flex: 1;                               /* ocupă tot spațiul liber */
+  display: grid;
+  place-items: center;                    /* centru perfect H + V */
+  padding: 24px;                          /* puțin spațiu pe ecrane mici */
+}
+
+/* (restul stilurilor tale rămân la fel) */
+
 
 .container {
   background: #fff;
@@ -76,4 +89,64 @@ button:hover {
   font-size: 18px;
   font-weight: bold;
   color: #333;
+
 }
+.logo {
+  display: block;
+  margin: 0 auto 20px auto; 
+  width: 100px;             
+  height: auto;
+  animation: spin 6s linear infinite; 
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #548dbc;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between; /* logo stânga, linkuri dreapta */
+  align-items: center;
+  z-index: 100;
+}
+
+/* Logo animat din navbar */
+.navbar .logo {
+  height: 50px;
+  width: auto;
+  display: block;
+  animation: spin 6s linear infinite; /* rotația ta existentă */
+}
+
+/* Linkuri */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  position: absolute;   /* poziționăm independent */
+  right: 30px;          /* le fixăm la dreapta */
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff7f50;
+}
+
+
+
+
+
+
+

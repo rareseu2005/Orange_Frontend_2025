@@ -7,23 +7,41 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Calculator IMC</h1>
-        <div class="inaltime">
-            <label for="inaltime">Inaltime (cm)</label>
-            <input type="text" id="inaltime"/>   
-        </div>
-        <div class="greutate">
-             <label for="inaltime">Greutate (kg)</label>
-            <input type="text" id="greutate"/> 
-        </div>
-        <div>
-            <button onclick="calculeazaIMC()">Calculeaza IMC</button>
-        </div>
-        
-        <p id="output">Rezultatul va fi aici</p>
+  <!-- (opțional: aici pui navbar-ul mai târziu) -->
+    <nav class="navbar">
+    <!-- Logo în stânga -->
+    <a href="#" class="brand">
+      <img src="logo.png" alt="Logo site" class="logo">
+    </a>
 
+    <!-- Linkuri în dreapta -->
+    <ul class="nav-links">
+      <li><a href="#">Acasă</a></li>
+      <li><a href="#">Despre</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="main">
+    <div class="container">
+      <img src="logo.png" alt="Logo Site" class="logo">
+      <h1>Calculator IMC</h1>
+      <div class="inaltime">
+        <label for="inaltime">Inaltime (cm)</label>
+        <input type="text" id="inaltime"/>
+      </div>
+      <div class="greutate">
+        <label for="greutate">Greutate (kg)</label>
+        <input type="text" id="greutate"/>
+      </div>
+      <div>
+        <button onclick="calculeazaIMC()">Calculeaza IMC</button>
+      </div>
+      <p id="output">Rezultatul va fi aici</p>
     </div>
-    <script src="app.js"></script>
+  </div>
+
+  <script src="app.js"></script>
 </body>
+
+
 </html>
